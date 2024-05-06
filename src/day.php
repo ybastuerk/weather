@@ -1,5 +1,5 @@
 <?php
-ju
+
 class day
 {
     private string $days = ' ';

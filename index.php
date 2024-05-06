@@ -3,9 +3,12 @@ require 'vendor/autoload.php';
 use Ybastuerk\Weather\day;
 use Carbon\Carbon;
 
-printf("Now: %s", Carbon::now());
+$weatherHistory = new history();
 
+$day1 = new Wetter("2024-05-06", "Regen");
 
-$day23 = new day('03.05.2024','Es regnet');
+$weatherHistory->addWeatherData($day1);
+
+echo "Wetter 6. Mai 2024: " . $weatherHistory->getWeatherByDate("2024-05-06")->getBeschreibung();
 
 
