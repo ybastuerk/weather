@@ -1,19 +1,21 @@
 <?php
-
 namespace Ybastuerk\Weather;
-use Ybastuerk\Weather\day;
-class Historygang{
 
-    private $weatherData = [];
+class history{
 
-    public function addWeatherData(Wetter $weather) {
-        $date = $weather->getDate();
-        $this->weatherData[$date] = $weather;
+    private array $weatherData = [];
+
+
+    public function addWeatherData(day $weather) {
+        $days = $weather->getDate();
+
+        return $this->weatherData[$days] = $weather;
     }
 
-    public function getWeatherByDate($date) {
-        if (array_key_exists($date, $this->weatherData)) {
-            return $this->weatherData[$date];
+    public function getWeatherByDate($days) {
+        if (array_key_exists($days, $this->weatherData)) {
+            return $this->weatherData[$days];
+
         }
         else {
             return "Hier gibt es nichts zu sehen";
